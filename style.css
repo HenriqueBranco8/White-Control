@@ -1,4 +1,10 @@
 @charset "UTF-8";
+:root{
+    --azul_petroleo: #1E3A5F;
+    --verde_suave: #2E7D6F;
+    --branco: #F4F6F8;
+    --preto: 2B2B2B;
+}
 *{
     box-sizing: border-box;
     padding: 0px;
@@ -6,13 +12,21 @@
 }
 header{
     display: flex;
-    background-color: aqua;
+    justify-content: space-between;
+
     height: 70px
 }
-header > nav{
-    justify-self: end;
+h1 > img{
+    width: 80px;
 }
-li > a{
-    
+nav{
+    margin-right: 90px;
+}
+ul> li{
+    display: inline-flex;
+    list-style: none;
+    padding: 10px;
+}
+.a_headers{
     text-decoration: none;
 }
