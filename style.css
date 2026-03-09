@@ -1,26 +1,66 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*
+.Inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/*
+.jetbrains-mono-<uniquifier> {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+
 :root{
     --azul_petroleo: #1E3A5F;
     --verde_suave: #2E7D6F;
     --branco: #F4F6F8;
-    --preto: 2B2B2B;
-}
+    --preto: #2B2B2B;
+    --titulo: bold 1.3em "Poppins", sans-serif,arial;
+    --subtitulo_e_texto: normal 1em "inter",sans-serif, arial;
+    --numbers: bold 16px "JetBrains Mono", monospace;
+    --espaco: 0px 200px;
+}   
 *{
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
 }
 header{
+    padding: var(--espaco);
     display: flex;
     justify-content: space-between;
-
-    height: 70px
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.418);
 }
-h1 > img{
-    width: 80px;
+span > img{
+    width: 100px;
 }
 nav{
-    margin-right: 90px;
+    
+    
 }
 ul> li{
     display: inline-flex;
@@ -29,4 +69,33 @@ ul> li{
 }
 .a_headers{
     text-decoration: none;
+}
+
+
+main{
+   height: 100vh; 
+   
+}
+#sect_one{
+    
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    background-image: linear-gradient(90deg, hsl(210,30%,92%), hsl(200,40%,88%),  hsl(200,40%,88%), hsl(35,60%,90%))
+}
+#sect_one > #text_sec_one{
+    width: 100%;
+    padding: var(--espaco);
+    font: var(--titulo);
+}
+.color_yellow{
+    color: #F5B400;
+}
+#img_conquist{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#img_conquist > img{
+    padding: var(--espaco);
 }
