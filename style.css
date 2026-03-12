@@ -117,8 +117,6 @@ main{
     padding: var(--espaco-left);
     
 }
-
-
 #sect_two{
     width: 100%;
 }
@@ -127,25 +125,37 @@ main{
     #sect_one{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+
     }
     #sect_one > #text_sec_one{
-        width: 100%;
-        padding: var(--espaco-total);
-        align-items: start;
+        margin-top: 50px;
+        width: 80%;
+        padding: 0px;
+        text-align: start;
     }
     #text_sec_one{
         align-items: center;
     }
     #text_sec_one > h1{
-        font-size: 1.8em;
+        font-size: 2em;
+        width: 750px;
     }
     #text_sec_one > h2{
         font-size: 1.3em;
+        width: 750px;
     }
     #text_sec_one > p{
         font-size: 0.8em;
+        width: 750px;
     }
     #img_conquist{
-        padding: var(--espaco-total); 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+    #cosquist{
+        
     }
 }
