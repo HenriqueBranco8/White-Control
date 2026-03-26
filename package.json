@@ -1,0 +1,21 @@
+{
+  "name": "white-control",
+  "version": "1.0.0",
+  "description": "White Control é um software 100% open-source desenvolvido com o objetivo de auxiliar, automatizar e proporcionar maior visibilidade à gestão financeira dos usuários.\r A plataforma busca simplificar o controle financeiro pessoal por meio de recursos que facilitam o acompanhamento de receitas, despesas e indicadores financeiros, promovendo organização, clareza e tomada de decisão mais assertiva.\r Nosso compromisso é oferecer uma solução transparente, acessível e colaborativa, permitindo que a comunidade contribua ativamente para a evolução contínua do projeto.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueBranco8/White-Control.git"
+  },
+  "keywords": [],
+  "author": "HenriqueBranco8",
+  "license": "Mit",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HenriqueBranco8/White-Control/issues"
+  },
+  "homepage": "https://github.com/HenriqueBranco8/White-Control#readme"
+}
