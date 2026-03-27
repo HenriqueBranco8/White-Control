@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "HenriqueBranco8",
   "license": "Mit",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/HenriqueBranco8/White-Control/issues"
   },

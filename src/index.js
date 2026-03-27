@@ -1,8 +1,12 @@
-import * as userInformations from './services/users&income.js'
-import * as testes from './services/functions.mjs'
-//Names and fonts
-const UserPanel = []
+import entraceIncome from './services/users&income.js'
+import * as functions from './services/functions.mjs'
 
-const teste = await userInformations.entraceIncome('Henrique', 'ifood', '300')
+const painelMain = []
 
-await testes.a()
+const paine = await entraceIncome('painelMain', 'Henrique', 'Ifood', 500)
+
+const teste = functions.lookingInfos(paine)
+
+console.log(teste)
+
+

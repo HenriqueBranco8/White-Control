@@ -1,5 +1,6 @@
-const entraceIncome = async(Name, FontOfentrance, balance) => {
+const entraceIncome = async(painel, nameUser, fontsInput, price) => {
     return {
+        painel,
         nameUser,
         fontsInput,
         price,
@@ -7,7 +8,4 @@ const entraceIncome = async(Name, FontOfentrance, balance) => {
     }
 }
 
-export default {
-    entraceIncome,
-    
-}
+export default entraceIncome
