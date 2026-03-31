@@ -11,8 +11,6 @@ await entraces.entraceFixedIncome(painelFixedIncome, 'Sario', 1200)
 const relatorio = await functions.informationsFixedIncome(painelFixedIncome)
 
 
-console.log(relatorio)
-
 
 
 
