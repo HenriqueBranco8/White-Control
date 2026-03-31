@@ -1,11 +1,18 @@
-const entraceIncome = async(painel, nameUser, fontsInput, price) => {
-    return {
-        painel,
-        nameUser,
+
+
+//view your fonts of fixed income
+const entraceFixedIncome = async(painel, fontsInput, balance) => {
+    const FixedIncome =  {
         fontsInput,
-        price,
-        totalFonts: () => price + price
+        balance,
     }
+    painel.push(FixedIncome)
+    return
+  
 }
 
-export default entraceIncome
+
+
+export {
+    entraceFixedIncome,
+}

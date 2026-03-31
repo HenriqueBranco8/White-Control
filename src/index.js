@@ -1,12 +1,21 @@
-import entraceIncome from './services/users&income.js'
+import * as entraces from './services/users&income.js'
 import * as functions from './services/functions.mjs'
 
-const painelMain = []
+const painelFixedIncome = []
 
-const paine = await entraceIncome('painelMain', 'Henrique', 'Ifood', 500)
 
-const teste = functions.lookingInfos(paine)
+await entraces.entraceFixedIncome(painelFixedIncome,'Transoporte', 300)
+await entraces.entraceFixedIncome(painelFixedIncome, 'Sario', 1200)
 
-console.log(teste)
+
+const relatorio = await functions.informationsFixedIncome(painelFixedIncome)
+
+
+console.log(relatorio)
+
+
+
+
+
 
 
