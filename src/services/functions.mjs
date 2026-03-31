@@ -1,13 +1,13 @@
 
 
-//View your painel of fixed income
+//View your painel of fixed income and view total Income
 const informationsFixedIncome = async (painel) => {
-    let soma = 0
+    let totalIncome = 0
     painel.forEach((item) => {
-        soma += item.balance
+        totalIncome += item.balance
         console.log(`Fonte: ${item.fontsInput}, R$: ${item.balance}`)
     });
-    console.log(`Total do mês: ${soma}`)
+    console.log(`Total do mês: ${totalIncome}`)
 }
 
     
