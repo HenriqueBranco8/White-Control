@@ -5,8 +5,6 @@ const entraceFixedIncome = async(painel, fontsInput, balance) => {
         balance,
     }
     painel.push(FixedIncome)
-    return
-  
 }
 
 const variableMoney = async (fontIncome, howOut, whereWasIt) => {
