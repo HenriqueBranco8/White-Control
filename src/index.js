@@ -4,16 +4,16 @@ import * as functions from './services/functions.mjs'
 const painelFixedIncome = []
 const incomeVariables = []
 
+//Itens what 
 await entraces.entraceFixedIncome(painelFixedIncome,'Transoporte', 300)
 await entraces.entraceFixedIncome(painelFixedIncome, 'Sario', 1200)
 await entraces.entraceFixedIncome(painelFixedIncome, 'Competição', 150)
 
-await entraces.variableMoney(incomeVariables, 30, 'Copa do Mundo')
-await entraces.variableMoney(incomeVariables, 70, 'Celular')
+await entraces.variableMoney(incomeVariables, 'Serviço prestado', 300)
+await entraces.variableMoney(incomeVariables, 'Venda de Equipamentos', 250)
 
-const message = await functions.message()
-const relatorio = await functions.informationsFixedIncome(painelFixedIncome)
-
+await functions.message()
+await functions.informationsFixedIncome(painelFixedIncome)
 await functions.viewIncomeVariable(incomeVariables)
 
 
