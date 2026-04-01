@@ -6,12 +6,10 @@ const painelFixedIncome = []
 
 await entraces.entraceFixedIncome(painelFixedIncome,'Transoporte', 300)
 await entraces.entraceFixedIncome(painelFixedIncome, 'Sario', 1200)
+await entraces.entraceFixedIncome(painelFixedIncome, 'Competição', 150)
 
-
+const message = await functions.message()
 const relatorio = await functions.informationsFixedIncome(painelFixedIncome)
-
-
-console.log(relatorio)
 
 
 
