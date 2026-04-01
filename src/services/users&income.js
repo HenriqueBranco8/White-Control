@@ -16,7 +16,12 @@ const variableMoney = async (fontIncome, whereWasIt, howInput ) => {
     fontIncome.push(moneyVariable)
 }
 
+const deleteItem = (fontIncome, nameFont) => {
+    fontIncome.splice()
+}
+
 export {
     entraceFixedIncome,
-    variableMoney
+    variableMoney,
+    deleteItem
 }
