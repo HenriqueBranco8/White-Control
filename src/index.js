@@ -3,6 +3,7 @@ import * as functions from './services/functions.mjs'
 
 const painelFixedIncome = []
 const incomeVariables = []
+const expensesAll = []
 
 //itens what it are on array Income Fixed
 await entraces.entraceFixedIncome(painelFixedIncome,'Transoporte', 300)
@@ -13,12 +14,14 @@ await entraces.entraceFixedIncome(painelFixedIncome, 'Competição', 150)
 await entraces.variableMoney(incomeVariables, 'Serviço prestado', 300)
 await entraces.variableMoney(incomeVariables, 'Venda de Equipamentos', 250)
 
+//Exits money
+await entraces.allExpenses(expensesAll, 50, 'Restaurante')
 
 //Report and menssagens of system
 await functions.message()
 await functions.informationsFixedIncome(painelFixedIncome)
 await functions.viewIncomeVariable(incomeVariables)
-
+await functions.viewTotalIncome()
 
 
 
