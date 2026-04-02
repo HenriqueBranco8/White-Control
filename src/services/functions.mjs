@@ -39,16 +39,31 @@ const viewIncomeVariable = async (fontIncome) => {
 
     fontIncome.forEach((item) => {
         totalIncomeVariable += item.howInput
-        console.log(`Fonte: ${item.whereWasIt}, R$ ${item.howInput.toFixed(2).replace('.', ',')} `)
+        console.log(`Fonte: ${item.fontsInput}, R$ ${item.howInput.toFixed(2).replace('.', ',')} `)
     })
     console.log(`Total no mês: R$ ${totalIncomeVariable.toFixed(2).replace('.', ',')}`)
 }
 
+
+//Delete item in array
+const deleteItem = async (fontIncome, nameFont) => {
+
+    //to check index of font 
+    const indexIncome = fontIncome.findIndex(font => font.fontsInput === nameFont)
+    
+    //if Index == True, delete item
+    if(indexIncome !== -1){
+        fontIncome.splice(indexIncome,1)
+        
+    }
+    
+    return
+}
 
 
 export {
     informationsFixedIncome,
     message,
     viewIncomeVariable,
-
+    deleteItem,
 }

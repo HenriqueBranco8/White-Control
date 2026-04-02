@@ -7,21 +7,19 @@ const entraceFixedIncome = async(painel, fontsInput, balance) => {
     painel.push(FixedIncome)
 }
 
-const variableMoney = async (fontIncome, whereWasIt, howInput ) => {
+const variableMoney = async (fontIncome, fontsInput, howInput ) => {
     const moneyVariable = {
         howInput,
-        whereWasIt
+        fontsInput
     }
     
     fontIncome.push(moneyVariable)
 }
 
-const deleteItem = (fontIncome, nameFont) => {
-    fontIncome.splice()
-}
+
 
 export {
     entraceFixedIncome,
     variableMoney,
-    deleteItem
+
 }
