@@ -15,15 +15,15 @@ await entraces.variableMoney(incomeVariables, 'Serviço prestado', 300)
 await entraces.variableMoney(incomeVariables, 'Venda de Equipamentos', 250)
 
 //Exits money
-await entraces.allExpenses(expensesAll, 50, 'Restaurante')
+await entraces.allExpenses(expensesAll, 180, 'Restaurante')
+await entraces.allExpenses(expensesAll, 57, 'Sei lÁ')
 
 //Report and menssagens of system
 await functions.message()
 await functions.informationsFixedIncome(painelFixedIncome)
 await functions.viewIncomeVariable(incomeVariables)
 await functions.viewTotalIncome()
-
-
-
+await functions.viewExpenses(expensesAll)
+await functions.totalAll()
 
 

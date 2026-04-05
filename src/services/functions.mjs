@@ -3,14 +3,15 @@
 const message = async () => {
 
     line()
-    console.log('\n     Bem-Vindo ao White Control\n')
+
+    console.log('\n             Bem-Vindo ao White Control\n')
     line()
 }
 
 //Function add Line for views
 async function line () {
     let lines = '-'
-    for(let i = 0; i <= 35; i++){
+    for(let i = 0; i <= 50; i++){
     lines += "-"
     }
     console.log(lines)
@@ -81,12 +82,35 @@ const viewTotalIncome = async () => {
 
     //message
     line()
-   console.log(`No total você teve uma renda de R$: ${totalIncome.toFixed(2).replace('.', ',')}`)
+   console.log(`\nNo total você teve uma renda de R$: ${totalIncome.toFixed(2).replace('.', ',')}\n`)
     line()
     return
 }
 
+//lógic of expeses 
+//variable for save total spent expenses
+let totalExepenses = 0
+const viewExpenses = async (expensesPainel) => {
+    console.log('\nDespesas\n')
 
+    expensesPainel.forEach((item) => {
+        console.log(`Você gastou: R$ ${item.HowMuchWasIt.toFixed(2).replace('.', ',')} | Com: ${item.WhereWasIt}`)
+        totalExepenses += item.HowMuchWasIt
+    })
+    console.log(`No total você gastou: R$ ${totalExepenses.toFixed(2).replace('.', ',')}`)
+}
+
+//Lógic what calculate total of all
+//variable what view the Total general
+let allTotal = 0
+const totalAll = async () => {
+
+    allTotal = totalIncome - totalExepenses
+
+    line()
+    console.log(`No final você tem: R$ ${allTotal.toFixed(2).replace('.', ',')}`)
+    line()
+}
 
 export {
     informationsFixedIncome,
@@ -94,5 +118,6 @@ export {
     viewIncomeVariable,
     deleteItem,
     viewTotalIncome,
-    
+    viewExpenses,
+    totalAll,
 }

@@ -22,7 +22,6 @@ const allExpenses = async (fontExpenses, HowMuchWasIt, WhereWasIt) => {
         WhereWasIt
     }
     fontExpenses.push(expenses)
-    console.log(fontExpenses)
 }
 
 export {
