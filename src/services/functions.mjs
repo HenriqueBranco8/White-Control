@@ -1,115 +1,142 @@
+import chalk from "chalk"
 
 //message of welcome
-const message = async () => {
-
+const message = () => {
     line()
-
     console.log('\n             Bem-Vindo ao White Control\n')
     line()
 }
 
 //Function add Line for views
-async function line () {
+function line () {
     let lines = '-'
     for(let i = 0; i <= 50; i++){
-    lines += "-"
+        lines += "-"
     }
     console.log(lines)
-    return
 }
 
 
-//View your painel of fixed income and view total Income
-//Variable what calculates total of Fixed Income
-let totalIncomeFixed = 0
+//View fixed income
+let totalFixedIncome = 0
 
-const informationsFixedIncome = async (painel) => {
-    //message
+const informationsFixedIncome = (fixedIncomeList) => {
     console.log('\nRenda Fixa:\n')
 
-    //go walk the painel of font fixed or variable and more all itens in font painel
-    painel.forEach((item) => {
-        totalIncomeFixed += item.balance
-        console.log(`Fonte: ${item.fontsInput}, R$: ${item.balance.toFixed(2).replace('.', ',')}`)
+    fixedIncomeList.forEach((item) => {
+        totalFixedIncome += item.amount
+        console.log(
+            `Fonte: ${item.source},`,
+            chalk.greenBright(`R$: ${item.amount.toFixed(2).replace('.', ',')}`)
+        )
     });
 
-    //more the total Fixed income
-    console.log(`Total do mês: ${totalIncomeFixed.toFixed(2).replace('.', ',')}`)
+    if(totalFixedIncome >= 1000){
+        console.log(`\nTotal:`, chalk.greenBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
+    } else if(totalFixedIncome <= 250){
+        console.log(`\nTotal:`, chalk.redBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
+    } else {
+        console.log(`\nTotal:`, chalk.yellowBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
+    }
 }
 
 
-//View your painel of income variables and view total income
-//variable what caculates total Income Variable
-let totalIncomeVariable = 0
+//View variable income
+let totalVariableIncome = 0
 
-const viewIncomeVariable = async (fontIncome) => {
-    //Message
+const viewIncomeVariable = (variableIncomeList) => {
     line()
     console.log('\nRenda Variável\n')
 
-    //walk the painel of font Variable and more all itens
-    fontIncome.forEach((item) => {
-        totalIncomeVariable += item.Income
-        console.log(`Fonte: ${item.fontsInput}, R$ ${item.Income.toFixed(2).replace('.', ',')} `)
+    variableIncomeList.forEach((item) => {
+        totalVariableIncome += item.amount
+        console.log(
+            `Fonte: ${item.source},`,
+            chalk.greenBright(`R$ ${item.amount.toFixed(2).replace('.', ',')}`)
+        )
     })
-    console.log(`Total no mês: R$ ${totalIncomeVariable.toFixed(2).replace('.', ',')}`)
+
+    if(totalVariableIncome >= 1000){
+        console.log(`\nTotal:`, chalk.greenBright(`R$: ${totalVariableIncome.toFixed(2).replace('.', ',')}\n`))
+    } else if(totalVariableIncome <= 250){
+        console.log(`\nTotal:`, chalk.redBright(`R$: ${totalVariableIncome.toFixed(2).replace('.', ',')}\n`))
+    } else {
+        console.log(`\nTotal:`, chalk.yellowBright(`R$: ${totalVariableIncome.toFixed(2).replace('.', ',')}\n`))
+    }
 }
 
 
-//Delete item in array
-const deleteItem = async (fontIncome, nameFont) => {
-
-    //to check index of font 
-    const indexIncome = fontIncome.findIndex(font => font.fontsInput === nameFont)
+//Delete item
+const deleteItem = (variableIncomeList, sourceName) => {
+    const indexIncome = variableIncomeList.findIndex(
+        item => item.source === sourceName
+    )
     
-    //if Index == True, delete item
     if(indexIncome !== -1){
-        fontIncome.splice(indexIncome,1)
-        
+        variableIncomeList.splice(indexIncome,1)
     } else {
         console.log('Error')
     }
-    
-    return
 }
 
-//View Total Income
-//Variable for save total income of all pain
+
+//Total income
 let totalIncome = 0
-const viewTotalIncome = async () => {
-    //Sum Total Income Fixed and variable for to do the total of all
-    totalIncome = totalIncomeFixed + totalIncomeVariable
 
-    //message
+const viewTotalIncome = () => {
+    totalIncome = totalFixedIncome + totalVariableIncome
+
     line()
-   console.log(`\nNo total você teve uma renda de R$: ${totalIncome.toFixed(2).replace('.', ',')}\n`)
+    if(totalIncome >= 1000){
+        console.log(`\nTotal:`, chalk.greenBright(`R$: ${totalIncome.toFixed(2).replace('.', ',')}\n`))
+    } else if(totalIncome <= 250){
+        console.log(`\nTotal:`, chalk.redBright(`R$: ${totalIncome.toFixed(2).replace('.', ',')}\n`))
+    } else {
+        console.log(`\nTotal:`, chalk.yellowBright(`R$: ${totalIncome.toFixed(2).replace('.', ',')}\n`))
+    }
     line()
-    return
 }
 
-//lógic of expeses 
-//variable for save total spent expenses
-let totalExepenses = 0
-const viewExpenses = async (expensesPainel) => {
+
+//Expenses
+let totalExpenses = 0
+
+const viewExpenses = (expenseList) => {
     console.log('\nDespesas\n')
 
-    expensesPainel.forEach((item) => {
-        console.log(`Você gastou: R$ ${item.HowMuchWasIt.toFixed(2).replace('.', ',')} | Com: ${item.WhereWasIt}`)
-        totalExepenses += item.HowMuchWasIt
+    expenseList.forEach((item) => {
+        console.log(
+            `Você gastou:`,
+            chalk.red(` R$ ${item.amount.toFixed(2).replace('.', ',')}`),
+            `| Com: ${item.category}`
+        )
+        totalExpenses += item.amount
     })
-    console.log(`No total você gastou: R$ ${totalExepenses.toFixed(2).replace('.', ',')}`)
+
+    line()
+    if(totalExpenses >= 1501){
+        console.log(`\nTotal gasto:`, chalk.bgRedBright(`R$: ${totalExpenses.toFixed(2).replace('.', ',')}\n`))
+    } else if(totalExpenses >= 1001){
+        console.log(`\nTotal gasto:`, chalk.red(`R$: ${totalExpenses.toFixed(2).replace('.', ',')}\n`))
+    } else {
+        console.log(`\nTotal gasto:`, chalk.yellow(`R$: ${totalExpenses.toFixed(2).replace('.', ',')}\n`))
+    }
 }
 
-//Lógic what calculate total of all
-//variable what view the Total general
+
+//Final balance
 let allTotal = 0
-const totalAll = async () => {
 
-    allTotal = totalIncome - totalExepenses
+const totalAll = () => {
+    allTotal = totalIncome - totalExpenses
 
-    line()
-    console.log(`No final você tem: R$ ${allTotal.toFixed(2).replace('.', ',')}`)
-    line()
+    if(allTotal >= 1000){
+        console.log(`\nSaldo final:`, chalk.greenBright(`R$: ${allTotal.toFixed(2).replace('.', ',')}\n`))
+    } else if(allTotal <= 250){
+        console.log(`\nSaldo final:`, chalk.redBright(`R$: ${allTotal.toFixed(2).replace('.', ',')}\n`))
+    } else {
+        console.log(`\nSaldo final:`, chalk.yellowBright(`R$: ${allTotal.toFixed(2).replace('.', ',')}\n`))
+    }
 }
 
 export {

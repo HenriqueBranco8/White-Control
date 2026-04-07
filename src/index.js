@@ -5,25 +5,23 @@ const painelFixedIncome = []
 const incomeVariables = []
 const expensesAll = []
 
-//itens what it are on array Income Fixed
-await entraces.entraceFixedIncome(painelFixedIncome,'Transoporte', 300)
-await entraces.entraceFixedIncome(painelFixedIncome, 'Sario', 1200)
-await entraces.entraceFixedIncome(painelFixedIncome, 'Competição', 150)
+// Fixed income
+entraces.addFixedIncome(painelFixedIncome,'Transporte', 300)
+entraces.addFixedIncome(painelFixedIncome, 'Salario', 1200)
+entraces.addFixedIncome(painelFixedIncome, 'Competição', 150)
 
-//itens what it are on array Income variable
-await entraces.variableMoney(incomeVariables, 'Serviço prestado', 300)
-await entraces.variableMoney(incomeVariables, 'Venda de Equipamentos', 250)
+// Variable income
+entraces.addVariableIncome(incomeVariables, 'Serviço prestado', 300)
+entraces.addVariableIncome(incomeVariables, 'Venda de Equipamentos', 150)
 
-//Exits money
-await entraces.allExpenses(expensesAll, 180, 'Restaurante')
-await entraces.allExpenses(expensesAll, 57, 'Sei lÁ')
+// Expenses
+entraces.addExpense(expensesAll, 180, 'Restaurante')
+entraces.addExpense(expensesAll, 57, 'Sei lá')
 
-//Report and menssagens of system
-await functions.message()
-await functions.informationsFixedIncome(painelFixedIncome)
-await functions.viewIncomeVariable(incomeVariables)
-await functions.viewTotalIncome()
-await functions.viewExpenses(expensesAll)
-await functions.totalAll()
-
-
+// Reports
+functions.message()
+functions.informationsFixedIncome(painelFixedIncome)
+functions.viewIncomeVariable(incomeVariables)
+functions.viewTotalIncome()
+functions.viewExpenses(expensesAll)
+functions.totalAll()

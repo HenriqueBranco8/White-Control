@@ -1,31 +1,35 @@
-//view your fonts of fixed income
-const entraceFixedIncome = async(painel, fontsInput, balance) => {
-    const FixedIncome =  {
-        fontsInput,
-        balance,
+// Add fixed income
+const addFixedIncome = (fixedIncomeList, source, amount) => {
+    const fixedIncome = {
+        source,
+        amount,
     }
-    painel.push(FixedIncome)
+
+    fixedIncomeList.push(fixedIncome)
 }
 
-const variableMoney = async (fontIncome, fontsInput, Income ) => {
-    const moneyVariable = {
-        Income,
-        fontsInput
+// Add variable income
+const addVariableIncome = (variableIncomeList, source, amount) => {
+    const variableIncome = {
+        source,
+        amount,
     }
-    
-    fontIncome.push(moneyVariable)
+
+    variableIncomeList.push(variableIncome)
 }
 
-const allExpenses = async (fontExpenses, HowMuchWasIt, WhereWasIt) => {
-    const expenses = {
-        HowMuchWasIt,
-        WhereWasIt
+// Add expense
+const addExpense = (expenseList, amount, category) => {
+    const expense = {
+        amount,
+        category,
     }
-    fontExpenses.push(expenses)
+
+    expenseList.push(expense)
 }
 
 export {
-    entraceFixedIncome,
-    variableMoney,
-    allExpenses,
+    addFixedIncome,
+    addVariableIncome,
+    addExpense,
 }
