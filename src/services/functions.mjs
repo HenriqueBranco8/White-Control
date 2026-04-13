@@ -1,7 +1,7 @@
 import chalk from "chalk"
 
 //message of welcome
-const message = () => {
+const messageWelcome = () => {
     line()
     console.log('\n             Bem-Vindo ao White Control\n')
     line()
@@ -141,7 +141,7 @@ const totalAll = () => {
 
 export {
     informationsFixedIncome,
-    message,
+    messageWelcome,
     viewIncomeVariable,
     deleteItem,
     viewTotalIncome,

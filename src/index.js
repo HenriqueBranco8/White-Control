@@ -1,10 +1,23 @@
 import * as entraces from './services/users&income.js'
 import * as functions from './services/functions.mjs'
+import income from './services/prompts/prompt-main.js'
+import prompt from 'prompt'
 
-const painelFixedIncome = []
-const incomeVariables = []
-const expensesAll = []
 
+async function main() {
+    functions.messageWelcome()
+    prompt.start()
+    prompt.get(income, (err, result) => {
+        if(result.chooseIncome == 1){
+            console.log('Fixa')
+        } else if(result.chooseIncome == 2) {
+            console.log('Variável')
+        }
+    })
+}
+
+main()
+/*
 // Fixed income
 entraces.addFixedIncome(painelFixedIncome,'Transporte', 300)
 entraces.addFixedIncome(painelFixedIncome, 'Salario', 1200)
@@ -25,3 +38,4 @@ functions.viewIncomeVariable(incomeVariables)
 functions.viewTotalIncome()
 functions.viewExpenses(expensesAll)
 functions.totalAll()
+*/
