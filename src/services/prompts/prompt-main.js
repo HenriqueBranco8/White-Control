@@ -1,14 +1,13 @@
-import prompt from "prompt"
-
-const income = [
+import chalk from "chalk"
+const incomeFixed = [
     {
-        nome: "chooseIncome",
-        description: "Escolha uma opção (1- Renda Fixa ou 2- Renda variável)",
-        pattern: /^[1-2]+$/,
-        message: "Escolha apenas 1 ou 2",
-        required: true
+        name: "chooseIncome",
+        description: chalk.white("Escolha a ferramenta (1- Renda fixa, 2 - Renda variável, 3 - Despesas)"),
+        pattern: /^[1-3]+$/,
+        message: chalk.red("Escolhga apenas entre 1, 2 ou 3"),
+        require: true
     }
 
 ]
 
-export default income
+export default incomeFixed

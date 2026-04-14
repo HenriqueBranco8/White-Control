@@ -1,17 +1,26 @@
 import * as entraces from './services/users&income.js'
 import * as functions from './services/functions.mjs'
-import income from './services/prompts/prompt-main.js'
+import incomeFixed from './services/prompts/prompt-main.js'
 import prompt from 'prompt'
+import teste from './services/incomes/fixedIncome/fixedIncome.js'
+
+
 
 
 async function main() {
     functions.messageWelcome()
     prompt.start()
-    prompt.get(income, (err, result) => {
-        if(result.chooseIncome == 1){
-            console.log('Fixa')
-        } else if(result.chooseIncome == 2) {
+    prompt.get(incomeFixed, (err, choose) => {
+        if(err){
+            console.log('erro')
+        }
+        if(choose.chooseIncome == 1){
+            teste()
+        } else if(choose.chooseIncome == 2) {
             console.log('Variável')
+            
+        } else if(choose.chooseIncome == 3){
+            console.log('despesas')
         }
     })
 }

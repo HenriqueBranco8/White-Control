@@ -21,23 +21,15 @@ function line () {
 let totalFixedIncome = 0
 
 const informationsFixedIncome = (fixedIncomeList) => {
-    console.log('\nRenda Fixa:\n')
-
     fixedIncomeList.forEach((item) => {
-        totalFixedIncome += item.amount
+        totalFixedIncome += item.quantia
         console.log(
-            `Fonte: ${item.source},`,
-            chalk.greenBright(`R$: ${item.amount.toFixed(2).replace('.', ',')}`)
+            `Fonte: ${item.fonte},`,
+            chalk.greenBright(`R$: ${item.quantia}`)
         )
     });
 
-    if(totalFixedIncome >= 1000){
-        console.log(`\nTotal:`, chalk.greenBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
-    } else if(totalFixedIncome <= 250){
-        console.log(`\nTotal:`, chalk.redBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
-    } else {
-        console.log(`\nTotal:`, chalk.yellowBright(`R$: ${totalFixedIncome.toFixed(2).replace('.', ',')}\n`))
-    }
+    console.log(`Total renda fixa: R$${totalFixedIncome}`)
 }
 
 
