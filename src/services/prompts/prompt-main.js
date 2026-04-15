@@ -10,4 +10,5 @@ const incomeFixed = [
 
 ]
 
+
 export default incomeFixed

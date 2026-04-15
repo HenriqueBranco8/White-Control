@@ -1,4 +1,3 @@
-import * as entraces from './services/users&income.js'
 import * as functions from './services/functions.mjs'
 import incomeFixed from './services/prompts/prompt-main.js'
 import prompt from 'prompt'

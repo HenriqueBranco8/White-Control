@@ -1,8 +1,8 @@
 // Add fixed income
-const addFixedIncome = (fixedIncomeList, source, amount) => {
+const addFixedIncome = async (fixedIncomeList, source, amount) => {
     const fixedIncome = {
-        source,
-        amount,
+        source: String(source),
+        amount: Number(amount),
     }
 
     fixedIncomeList.push(fixedIncome)

@@ -1,7 +1,7 @@
 import prompt from "prompt"
 import sountMount from "./handle.js"
-import { informationsFixedIncome } from "../../functions.mjs"
 import { addFixedIncome } from "../../users&income.js"
+import { informationsFixedIncome } from "../../functions.mjs"
 
 const painelFixedIncome = []
 
@@ -9,12 +9,15 @@ const teste = () => {
     prompt.get(sountMount, (err, result) => {
         if(err){
             console.log('[ERRO] PAINEL RENDA FIXA [ERRO]')
-        } 
-        addFixedIncome(painelFixedIncome, result.fonte, result.quantia)
-        informationsFixedIncome(painelFixedIncome)
-        
+        }
+        else{
+            
+            addFixedIncome(painelFixedIncome, result.source, result.amount)
+            informationsFixedIncome(painelFixedIncome)
+            
+        }
+
     })
-    
 }
 
 export default teste
