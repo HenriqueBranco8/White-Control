@@ -1,4 +1,5 @@
-const sountMount = [
+
+export const sountMount = [
     {
         name: 'source',
         description: 'Escreva da onde veio o dinheiro',
@@ -12,7 +13,17 @@ const sountMount = [
         message: '[ERRO] tente novamente.',
         pattern: /^\d+$/
     }
+
 ]
 
 
-export default sountMount
+export const addMoreMountFixed = [
+    {
+    name: 'addMore',
+    description: 'Você deseja adicionar mais itens? (1- Sim ou 2- Não)',
+    pattern: /^[1-2]+$/,
+    message: '[ERRO] Loop',
+    required: true
+    },
+]
+

@@ -13,12 +13,12 @@ async function main() {
         if(err){
             console.log('erro')
         }
-        if(choose.chooseIncome == 1){
+        if(choose.chooseIncome === '1'){
             teste()
-        } else if(choose.chooseIncome == 2) {
+        } else if(choose.chooseIncome === '2') {
             console.log('Variável')
             
-        } else if(choose.chooseIncome == 3){
+        } else if(choose.chooseIncome === '3'){
             console.log('despesas')
         }
     })
